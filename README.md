@@ -47,4 +47,5 @@ UVP is released under the GNU General Public License version 3.0 or any later ve
 
 ## References
 [1]: Kalescky, R.; Santos-Jr., C. V.; Tao, Y.; Zou, W.; Freindorf, M.; Cremer, D.; Kraka, E. URVA2025. Computational and Theoretical Chemistry Group (CATCO), Southern Methodist University: Dallas, TX, USA, 2025.
-[2]: Fleming, K.; Kraka, E. Examining Interstellar Ion-Neutral Reactions Using the Unified Reaction Valley Approach: The Case of the CCl$^{+}$ + CH$_3$CN Reaction. ACS Earth & Space Chem. 2025, 9, 1837–1847.
+
+[2]: Fleming, K.; Kraka, E. Examining Interstellar Ion-Neutral Reactions Using the Unified Reaction Valley Approach: The Case of the CCl<sup>+</sup> + CH<sub>3</sub>CN Reaction. ACS Earth & Space Chem. 2025, 9, 1837–1847.
