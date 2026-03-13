@@ -20,9 +20,10 @@ Clone the repository to your local computer and access the uvp directory
 git clone git@github.com:SMU-CATCO/UVP.git
 cd UVP
 ```
-Create the uvp conda environment from the uvp.yml environment file
+Create the uvp conda environment from the uvp.yml environment file and then activate the environment
 ```Python
 conda env create -f uvp.yml
+conda activate uvp
 ```
 Copy the uvp.py file to a directory of your choice, such as the home directory
 ```Python
