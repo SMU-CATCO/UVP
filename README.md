@@ -9,7 +9,7 @@ The GUI requires three input files: an RP curvature file (.DAT format), an RC en
 ### Version 0.1.0 Notes
 * Initial version of GUI. Currently compatible only with macOS devices with the osx-arm64 platform (i.e., Apple Silicon).
 
-## Requirements
+## Software Requirements
 * Python >= 3.12.3
 * Conda
 
@@ -40,7 +40,7 @@ Now, you can use the `uvp` alias to automatically run the uvp.py script within a
 
 ## Examples
 
-Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH~3~CN) and the carbon monochloride ion (CCl<sup>+</sup>}), previously examined with URVA.<sup>2</sup>
+Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH<sub>3</sub>CN) and the carbon monochloride ion (CCl<sup>+</sup>), previously examined with URVA.<sup>2</sup>
 
 ## License Information
 UVP is released under the GNU General Public License version 3.0 or any later version.
