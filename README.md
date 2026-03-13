@@ -15,7 +15,7 @@ The GUI requires three input files: an RP curvature file (.DAT format), an RC en
 
 ## Installation and Usage
 
-Clone the repository to your local machine and access the repository
+Clone the repository to your local machine and access the uvp directory
 ```Python
 git clone git@github.com:SMU-CATCO/UVP.git
 cd UVP
@@ -28,7 +28,7 @@ Copy the uvp.py file to a directory of your choice, such as the home directory
 ```Python
 cp uvp.py path/to/new/uvp/directory
 ```
-In the ~/.bashrc file, include an alias to run the Python script:
+In your local ~/.bashrc file, include an alias to run the Python script
 ```Python
 alias uvp="python3 path/to/new/uvp/directory"
 ```
@@ -40,12 +40,17 @@ Now, you can use the `uvp` alias to automatically run the uvp.py script within a
 
 ## Examples
 
-Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH<sub>3</sub>CN) and the carbon monochloride ion (CCl<sup>+</sup>), previously examined with URVA.<sup>2</sup>
+Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH<sub>3</sub>CN) and the carbon monochloride ion (CCl<sup>+</sup>), which was previously examined with URVA.<sup>2</sup> More specifically, this elementary reaction is the unimolecular isomerization of the Van der Waals complex described by intermediate **5** to form intermediate **6**.<sup>2</sup>
+
+First, from the `uvp` directory, access the `example_1` subdirectory contained within the `examples` subdirectory
+```Python
+cd examples/example_1
+```
 
 ## License Information
 UVP is released under the GNU General Public License version 3.0 or any later version.
 
 ## References
-[1]: Kalescky, R.; Santos-Jr., C. V.; Tao, Y.; Zou, W.; Freindorf, M.; Cremer, D.; Kraka, E. URVA2025. Computational and Theoretical Chemistry Group (CATCO), Southern Methodist University: Dallas, TX, USA, 2025.
+[1] Kalescky, R.; Santos-Jr., C. V.; Tao, Y.; Zou, W.; Freindorf, M.; Cremer, D.; Kraka, E. URVA2025. Computational and Theoretical Chemistry Group (CATCO), Southern Methodist University: Dallas, TX, USA, 2025.
 
-[2]: Fleming, K.; Kraka, E. Examining Interstellar Ion-Neutral Reactions Using the Unified Reaction Valley Approach: The Case of the CCl<sup>+</sup> + CH<sub>3</sub>CN Reaction. ACS Earth & Space Chem. 2025, 9, 1837–1847.
+[2] Fleming, K.; Kraka, E. Examining Interstellar Ion-Neutral Reactions Using the Unified Reaction Valley Approach: The Case of the CCl<sup>+</sup> + CH<sub>3</sub>CN Reaction. ACS Earth & Space Chem. 2025, 9, 1837–1847.
