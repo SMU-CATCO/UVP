@@ -14,9 +14,17 @@ The GUI requires three input files: an RP curvature file (.DAT format), an RC en
 * Conda
 
 ## Installation
+
+Clone the repository to your local machine
+```Python
+git clone git@github.com:SMU-CATCO/UVP.git
+cd UVP
+```
+Create the uvp conda environment from the uvp.yml environment file
 ```Python
 conda env create -f uvp.yml
 ```
+Copy over the uvp.py file 
 ## Examples
 
 ## License Information
