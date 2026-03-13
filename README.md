@@ -47,7 +47,7 @@ First, from the `uvp` directory, access the `example_1` subdirectory contained w
 ```Bash
 cd examples/example_1
 ```
-This directory contains the RP curvature file (originalkappa.dat), RC energy file (energy.csv), and RC geometry file (reaction.xyz). These are the three input files need to run the GUI, as previously mentioned. 
+This directory contains the RP curvature file (originalkappa.dat), RC energy file (energy.csv), and RC geometry file (reaction.xyz) for the elementary reaction. These are the three input files need to run the GUI, as previously mentioned. 
 
 Finally, within this directory, run the uvp.py script using the `uvp` alias described in the previous section. **Note:** Please make sure to turn on **Light Mode** on your local computer before running the script, as Dark mode may affect the visibility of certain GUI widgets.
 
