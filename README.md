@@ -15,7 +15,7 @@ The GUI requires three input files: an RP curvature file (.dat format), an RC en
 
 ## Installation and Usage
 
-Clone the repository to your local computer and access the `uvp` directory
+Clone the repository to your local computer and access the `UVP` directory
 ```Bash
 git clone git@github.com:SMU-CATCO/UVP.git
 cd UVP
@@ -43,7 +43,7 @@ Now, you can use the `uvp` alias to automatically run the uvp.py script within a
 
 Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH<sub>3</sub>CN) and the carbon monochloride ion (CCl<sup>+</sup>), which was previously examined with URVA.<sup>2</sup> More specifically, this elementary reaction is the unimolecular isomerization of the Van der Waals complex described by intermediate **5** to form intermediate **6** (see PES shown in Figure 1 of ref. [2]).
 
-First, from the `uvp` directory, access the `example_1` subdirectory contained within the `examples` subdirectory
+First, from the `UVP` directory, access the `example_1` subdirectory contained within the `examples` subdirectory
 ```Bash
 cd examples/example_1
 ```
