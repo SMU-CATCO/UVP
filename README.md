@@ -39,7 +39,7 @@ source ~/.bashrc
 ```
 Now, you can use the `uvp` alias to automatically run the uvp.py script within any directory containing the three UVP input files. An example is given below.
 
-## Examples
+## Example
 
 Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH<sub>3</sub>CN) and the carbon monochloride ion (CCl<sup>+</sup>), which was previously examined with URVA.<sup>2</sup> More specifically, this elementary reaction is the unimolecular isomerization of the Van der Waals complex described by intermediate **5** to form intermediate **6**.<sup>2</sup>
 
@@ -49,9 +49,12 @@ cd examples/example_1
 ```
 This directory contains the RP curvature file (originalkappa.dat), RC energy file (energy.csv), and RC geometry file (reaction.xyz). These are the three input files need to run the GUI, as previously mentioned. 
 
-Finally, within this directory, run the uvp.py script using the `uvp` alias described in the previous section. **Note:** Please make sure to turn on Light Mode on your local computer, as Dark mode may affect the visibility of certain GUI widgets.
+Finally, within this directory, run the uvp.py script using the `uvp` alias described in the previous section. **Note:** Please make sure to turn on **Light Mode** on your local computer before running the script, as Dark mode may affect the visibility of certain GUI widgets.
 
-Once the alias is invoked, the GUI will appear
+Once the `uvp` alias is invoked, the GUI will appear
+
+
+
 
 
 ## License Information
