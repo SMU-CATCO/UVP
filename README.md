@@ -36,11 +36,11 @@ Afterwards, reload the ~/.bashrc file
 ```Python
 source ~/.bashrc
 ```
-Now, you can use the `uvp` alias to automatically run the uvp.py script within any directory containing the three UVP input files. An example of this is given below.
+Now, you can use the `uvp` alias to automatically run the uvp.py script within any directory containing the three UVP input files. An example is given below.
 
 ## Examples
 
-Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH$_3$CN) and the carbon monochloride ion (CCl$^{+}$), [previously examined with URVA.][2]
+Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH~3~CN) and the carbon monochloride ion (CCl<sup>+</sup>}), previously examined with URVA.<sup>2</sup>
 
 ## License Information
 UVP is released under the GNU General Public License version 3.0 or any later version.
