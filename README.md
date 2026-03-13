@@ -18,4 +18,4 @@ The GUI requires three input files: an RP curvature file (.DAT format), an RC en
 ## Examples
 
 ## License Information
-UVP is released under the GNU General Public License version 3.0 or later.
+UVP is released under the GNU General Public License version 3.0 or any later version.
