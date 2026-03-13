@@ -55,11 +55,19 @@ Once the `uvp` alias is invoked, the GUI will appear
 
 <img src="uvp_example_1.gif" alt="UVP GUI">
 
+The components of the GUI, shown above, are the following:
+* **2D RC Visual**: Shows the RC geometry for each value of *s*, the reaction coordinate. The 2D image for each frame is generated using modified source code from the Atomic Simulation Environment (ASE) Python library.<sup>3,4</sup>
+* **RC Visual Control Panel**: Enables the user to control the value of *s*, thereby changing the 2D RC visual as well. The user can do this in four ways: moving the slider with their mouse, entering a new value of *s* in the text box (followed by pressing "Jump to s value" or just pressing return), animating the reaction in the forward ("Forward") or reverse ("Reverse") directions or moving the next or previous *s* values ("Step Forward" or "Step Backward", respectively), or skipping to the key points along the reaction coordinate ("First Point", "Transition State", or "Last Point"). The frame rate for the animation can be controlled by specifying the rate in the text box on the bottom-left side of the window (25 fps by default). **Note:** Frame rates higher than 25 fps may cause the GUI to crash. However, there is no risk of crashing if the slider is used instead to manually animate the reaction. The user can move the slider as fast they would like without a higher risk of crashing.
+* **RP Curvature and RC Energy Plots**: Interactive plots showing the RP curvature and RC energy as a function of *s*. When the red tracers are enabled, the user can more easily see which values of the curvature and energy correspond to a given value of *s*. To prevent the GUI from crashing, the tracers must be disabled prior to running the animation.
 
 ## License Information
 UVP is released under the GNU General Public License version 3.0 or any later version.
 
 ## References
-[1] Kalescky, R.; Santos-Jr., C. V.; Tao, Y.; Zou, W.; Freindorf, M.; Cremer, D.; Kraka, E. URVA2025. Computational and Theoretical Chemistry Group (CATCO), Southern Methodist University: Dallas, TX, USA, 2025.
+[1] Kalescky, R.; Santos-Jr., C. V.; Tao, Y.; Zou, W.; Freindorf, M.; Cremer, D.; Kraka, E. URVA2025. Computational and Theoretical Chemistry Group (CATCO), Southern Methodist University: Dallas, TX, USA, **2025**.
 
-[2] Fleming, K.; Kraka, E. Examining Interstellar Ion-Neutral Reactions Using the Unified Reaction Valley Approach: The Case of the CCl<sup>+</sup> + CH<sub>3</sub>CN Reaction. ACS Earth & Space Chem. 2025, 9, 1837–1847.
+[2] Fleming, K.; Kraka, E. Examining Interstellar Ion-Neutral Reactions Using the Unified Reaction Valley Approach: The Case of the CCl<sup>+</sup> + CH<sub>3</sub>CN Reaction. <u>ACS Earth & Space Chem.</u> **2025**, <u>9</u>, 1837–1847.
+
+[3] Bahn, S. R.; Jacobsen, K. W. An Object-Oriented Scripting Interface to a Legacy Electronic Structure Code. <u>Comput. Sci. Eng.</u> **2002**, <u>4</u>, 56–66.
+
+[4] Larsen, A. H.; Mortensen, J. J.; Blomqvist, J.; Castelli, I. E.; Christensen, R.; Du lak, M.; Friis, J.; Groves, M. N.; Hammer, B.; Hargus, C. et al. The Atomic Simulation Environment—A Python Library for Working With Atoms. <u>J. Phys.:Condens. Matter<u> **2017**, <u>29</u>, 273002.
