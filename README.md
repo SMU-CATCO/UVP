@@ -15,26 +15,26 @@ The GUI requires three input files: an RP curvature file (.dat format), an RC en
 
 ## Installation and Usage
 
-Clone the repository to your local computer and access the uvp directory
+Clone the repository to your local computer and access the `uvp` directory
 ```Bash
 git clone git@github.com:SMU-CATCO/UVP.git
 cd UVP
 ```
 Create the uvp conda environment from the uvp.yml environment file and then activate the environment
-```
+```Bash
 conda env create -f uvp.yml
 conda activate uvp
 ```
-Copy the uvp.py file to a directory of your choice, such as the home directory
-```
+Copy the uvp.py file to a directory of your choice, such as your home directory
+```Bash
 cp uvp.py path/to/new/uvp/directory
 ```
 In your local ~/.bashrc file, include an alias to run the Python script
-```
+```Bash
 alias uvp="python3 path/to/new/uvp/directory"
 ```
 Afterwards, reload the ~/.bashrc file
-```
+```Bash
 source ~/.bashrc
 ```
 Now, you can use the `uvp` alias to automatically run the uvp.py script within any directory containing the three UVP input files. An example is given below.
@@ -44,7 +44,7 @@ Now, you can use the `uvp` alias to automatically run the uvp.py script within a
 Here, we will apply UVP to an elementary step of the ion-neutral, gas-phase reaction between acetonitrile (CH<sub>3</sub>CN) and the carbon monochloride ion (CCl<sup>+</sup>), which was previously examined with URVA.<sup>2</sup> More specifically, this elementary reaction is the unimolecular isomerization of the Van der Waals complex described by intermediate **5** to form intermediate **6** (see PES shown in Figure 1 of ref. [2]).
 
 First, from the `uvp` directory, access the `example_1` subdirectory contained within the `examples` subdirectory
-```Python
+```Bash
 cd examples/example_1
 ```
 This directory contains the RP curvature file (originalkappa.dat), RC energy file (energy.csv), and RC geometry file (reaction.xyz). These are the three input files need to run the GUI, as previously mentioned. 
