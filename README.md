@@ -14,7 +14,9 @@ The GUI requires three input files: an RP curvature file (.DAT format), an RC en
 * Conda
 
 ## Installation
-
+```Python
+conda env create -f uvp.yml
+```
 ## Examples
 
 ## License Information
