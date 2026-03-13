@@ -53,8 +53,7 @@ Finally, within this directory, run the uvp.py script using the `uvp` alias desc
 
 Once the `uvp` alias is invoked, the GUI will appear
 
-
-
+![UVP GUI][./uvp_example_1.gif]
 
 
 ## License Information
