@@ -71,8 +71,8 @@ UVP is released under the GNU General Public License version 3.0 or any later ve
 ## References
 [1] Kalescky, R.; Santos-Jr., C. V.; Tao, Y.; Zou, W.; Freindorf, M.; Cremer, D.; Kraka, E. URVA2025. Computational and Theoretical Chemistry Group (CATCO), Southern Methodist University: Dallas, TX, USA, **2025**.
 
-[2] Fleming, K.; Kraka, E. Examining Interstellar Ion-Neutral Reactions Using the Unified Reaction Valley Approach: The Case of the CCl<sup>+</sup> + CH<sub>3</sub>CN Reaction. <u>ACS Earth & Space Chem.</u> **2025**, <u>9</u>, 1837–1847.
+[2] Fleming, K.; Kraka, E. Examining Interstellar Ion-Neutral Reactions Using the Unified Reaction Valley Approach: The Case of the CCl<sup>+</sup> + CH<sub>3</sub>CN Reaction. *ACS Earth & Space Chem.* **2025**, <u>9</u>, 1837–1847.
 
-[3] Bahn, S. R.; Jacobsen, K. W. An Object-Oriented Scripting Interface to a Legacy Electronic Structure Code. <u>Comput. Sci. Eng.</u> **2002**, <u>4</u>, 56–66.
+[3] Bahn, S. R.; Jacobsen, K. W. An Object-Oriented Scripting Interface to a Legacy Electronic Structure Code. *Comput. Sci. Eng.* **2002**, <u>4</u>, 56–66.
 
-[4] Larsen, A. H.; Mortensen, J. J.; Blomqvist, J.; Castelli, I. E.; Christensen, R.; Du lak, M.; Friis, J.; Groves, M. N.; Hammer, B.; Hargus, C. et al. The Atomic Simulation Environment—A Python Library for Working With Atoms. <u>J. Phys.:Condens. Matter<u> **2017**, <u>29</u>, 273002.
+[4] Larsen, A. H.; Mortensen, J. J.; Blomqvist, J.; Castelli, I. E.; Christensen, R.; Du lak, M.; Friis, J.; Groves, M. N.; Hammer, B.; Hargus, C. et al. The Atomic Simulation Environment—A Python Library for Working With Atoms. *J. Phys.:Condens. Matter* **2017**, <u>29</u>, 273002.
