@@ -29,9 +29,9 @@ Copy the uvp.py file to a directory of your choice, such as your home directory
 ```Bash
 cp uvp.py path/to/new/uvp/directory
 ```
-In your local ~/.bashrc file, include an alias to run the Python script
+In your local ~/.bashrc file, include an alias to run the uvp.py script
 ```Bash
-alias uvp="python3 path/to/new/uvp/directory"
+alias uvp="python3 path/to/new/uvp/directory/uvp.py"
 ```
 Afterwards, reload the ~/.bashrc file
 ```Bash
