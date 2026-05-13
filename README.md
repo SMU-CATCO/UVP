@@ -36,7 +36,7 @@ cp urva_vis.py path/to/new/URVAvis/directory
 ```
 In your local ~/.bashrc file, include an alias to run the urva_vis.py script
 ```Bash
-alias urva_vis="python3 path/to/new/URVAvis/directory/urva_vis.py"
+alias urva_vis="python path/to/new/URVAvis/directory/urva_vis.py"
 ```
 Afterwards, reload the ~/.bashrc file
 ```Bash
