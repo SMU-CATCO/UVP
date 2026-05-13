@@ -10,7 +10,7 @@ The GUI requires three input files: the RP curvature file (.dat format), the RC 
 * Initial version of GUI
 
 ## Hardware/OS Requirements
-* MacOS device with the osx-arm64 platform (i.e., Apple Silicon). Cross-compatibility with other platforms will be included in future versions of URVAvis.
+* MacOS device with the osx-arm64 platform (i.e., Apple Silicon). Cross-compatibility with other platforms (e.g., win-64, linux-64) will be included in future versions of URVAvis.
 
 ## Software Requirements
 * Python >= 3.12.3
