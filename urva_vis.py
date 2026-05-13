@@ -23,6 +23,7 @@ import threading
 from threading import Thread
 
 import matplotlib
+import matplotlib.pyplot as plt
 import darkdetect
 import trace
 import shutil
@@ -322,22 +323,83 @@ class MyFrame(wx.Frame):
                 break
         self.last_frame = cui_coords.index(last_target)
         
+
+        # Function for rotating atoms (in ASE Atoms object) to XY plane in Cartesian space.
+        def rotate_xyz(atoms,rotation_matrix = None):
+
+            # Get atomic position
+            P = atoms.get_positions()
+
+            # Check to see if rotation matrix has already been provided (say, from a previous run of rotate_xyz())
+            if rotation_matrix is None:
+                # Compute covariance matrix given the Cartesian coordinates of each atom
+                covariance = np.cov(P-np.mean(P,axis=0),rowvar=False)
+
+                # Evaluate eigenvectors and eigenvectors of covariance matrix
+                eigenvalues, eigenvectors = np.linalg.eig(covariance)
+                
+                # Determine the normal vector of the PCA plane of the atoms 
+                # (i.e., the eigenvector corresponding to the minimum eigenvalue of the covariance matrix)
+                normal_vec_pca = eigenvectors[:,np.argmin(eigenvalues)]
+                normal_vec_xy = [0,0,1] # Vector normal to xy plane
+                if np.allclose(np.cross(normal_vec_pca,normal_vec_xy),[0,0,0]): # Check to see if the two normal vectors are approximately parallel (or antiparallel) to one other
+                    return np.eye(3) # Returns identity matrix (i.e., no rotation)
+                
+                # Sclar components of rotation matrix (based on rotation axis and angle)
+                c = np.dot(normal_vec_pca,normal_vec_xy)/(np.linalg.norm(normal_vec_pca)*np.linalg.norm(normal_vec_xy))
+                s = np.sqrt(1-c**2)
+                C = 1 - c
+                rotation_axis = np.cross(normal_vec_pca,normal_vec_xy)/np.linalg.norm(np.cross(normal_vec_pca,normal_vec_xy))
+                x = rotation_axis[0]
+                y = rotation_axis[1]
+                z = rotation_axis[2]
+
+                # Construct rotation matrix and then calculate rotated positions of atoms using the rotation matrix
+                R = np.array([[x*x*C+c, x*y*C-z*s, x*z*C+y*s],[y*x*C+z*s, y*y*C+c, y*z*C-x*s],[z*x*C-y*s, z*y*C+x*s, z*z*C+c]])
+                P_new = (R @ P.T).T
+                atoms.set_positions(P_new) 
+                return R
+            else:
+                R = rotation_matrix
+                P_new = (R @ P.T).T
+                atoms.set_positions(P_new) 
         
         # Creates the "frames" directory, which contains the .png images of all the points along the reaction coordinate 
         # generated with ase package. If the "frames" directory is already present, this step is skipped.
     
         sys.stdout = sys.__stdout__
         if os.path.exists('./frames') == False:
-            # Get dimensions for very first frame
-            s_value = self.cui_set.get(1)
+            # Determine the animation frame with the most planar arrangement of atoms (the frame with the smallest minimum eigenvalue of the covariance matrix based on the RC geometry)
+            frame_planarity = []
+            for line_value in self.cui_set.keys():
+                s_value = self.cui_set.get(line_value)
+                xyz_name = "./"+str(s_value)+".xyz"       
+                xyz_file = open(xyz_name, "w")
+                for r in range(line_value-1,line_value+self.n_atoms+1):
+                    self.xyz_lines[r]
+                    xyz_file.write(self.xyz_lines[r])
+                xyz_file.close()
+                atoms = ase.io.read(xyz_name)
+                P = atoms.get_positions()
+                covariance = np.cov(P-np.mean(P,axis=0),rowvar=False)
+                eigenvalues, _ = np.linalg.eig(covariance)
+                frame_planarity.append(np.min(eigenvalues))
+                os.remove(xyz_name)
+            chosen_frame_idx = np.argmin(frame_planarity)
+            if isinstance(chosen_frame_idx, np.ndarray): # Makes sure that only one frame is selected (in the case that there are multiple frames with identical maximum planarity)
+                chosen_frame_idx = np.argmin(frame_planarity)[0]
+            # Get dimensions and rotation matrix for animation frame with the greatest planarity
+            s_value = list(self.cui_set.values())[chosen_frame_idx+1]
             xyz_name = "./" + str(s_value)+".xyz"       
             xyz_file = open(xyz_name, "w")
-            for r in range(0,self.n_atoms+2):
+            chosen_frame_line_number = list(self.cui_set.keys())[chosen_frame_idx+1]
+            for r in range(chosen_frame_line_number-1,chosen_frame_line_number+self.n_atoms+1):
                 self.xyz_lines[r]
                 xyz_file.write(self.xyz_lines[r])
             xyz_file.close()
             structure = ase.io.read(xyz_name)
             eps_path = "./" + str(s_value)+ ".eps"
+            rotation_matrix = rotate_xyz(structure)
             ase.io.write(eps_path,structure)
             first_frame_eps = Image.open(eps_path)
             self.w, self.h = first_frame_eps.size
@@ -355,11 +417,12 @@ class MyFrame(wx.Frame):
                     self.xyz_lines[r]
                     xyz_file.write(self.xyz_lines[r])
                 xyz_file.close()
-                # Use ASE to generate .eps image corresponding to each xyz geometry
+                # Use ASE to generate .eps image corresponding to each xyz geometry (rotated prior to creation of image)
                 structure = ase.io.read(xyz_name)
+                rotate_xyz(structure, rotation_matrix)
                 eps_path = "./frames/"+str(s_value)+".eps"
                 handler = open(eps_path,"x")
-                write_eps_mod(handler,structure,self.w,self.h)
+                write_eps_mod(handler,structure,self.w*1.3,self.h*1.3)
                 handler.close()
                 # Process the eps image and convert it into a high-resolution png image (with a white background) - Code adapted from Stack Overflow discussion: https://stackoverflow.com/a/60238673
                 resolution = (1024,1024)
@@ -374,7 +437,7 @@ class MyFrame(wx.Frame):
                 vector = vector.resize(scaled_size,Image.LANCZOS)
                 png_path = "./frames/"+str(s_value)+".png"
                 vector.save(png_path, "PNG")
-                # Remove the intermediary eps, and xyz files from the frames directory 
+                # Remove the intermediary eps and xyz files from the frames directory 
                 os.remove(eps_path)
                 os.remove(xyz_name)
                 # Update user on the progress of the frame generation
